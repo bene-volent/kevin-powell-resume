@@ -1,0 +1,341 @@
+/* Custom Properties */
+
+:root {
+    /* Font Props */
+    --ff-base: "Outfit", sans-serif;
+
+    --fw-regular: 300;
+    --fw-semi-bold: 400;
+    --fw-bold: 700;
+
+    --fs-200: 0.875rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.375rem;
+    --fs-600: 1.75rem;
+    --fs-700: 3.25rem;
+
+    /* Colors */
+    --clr-neutral-100: hsl(0 0% 100% / 1);
+
+    --clr-accent-400: hsl(147 93% 43% / 1);
+
+    --clr-primary-800: hsl(229 47% 17% / 1);
+    --clr-primary-700: hsl(229 43% 20% / 1);
+    --clr-primary-400: hsl(230 50% 58% / 0.3);
+    --clr-primary-300: hsl(229 36% 39% / 1);
+    --clr-primary-200: hsl(229 21% 53% / 1);
+
+    --clr-secondary-400: hsl(229 78% 60%/ 1);
+}
+@media screen and (width<500px) {
+    
+    :root{
+        --fs-200:.75rem;
+        --fs-300:0.825rem;
+        --fs-400:1rem;
+        --fs-500:1.125rem;
+        --fs-600:1.25rem;
+        --fs-700:2rem
+    }
+}
+
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+.fw-semibold {
+    font-weight: var(--fw-semi-bold);
+}
+
+.fs-200 {
+    font-size: var(--fs-200);
+}
+.fs-300 {
+    font-size: var(--fs-300);
+}
+.fs-500 {
+    font-size: var(--fs-500);
+}
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.fs-600 {
+    font-size: var(--fs-600);
+}
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+.bg-accent-400 {
+    background-color: var(--clr-accent-400);
+}
+.bg-primary-800 {
+    background-color: var(--clr-primary-800);
+}
+.bg-primary-700 {
+    background-color: var(--clr-primary-700);
+}
+.bg-primary-400 {
+    background-color: var(--clr-primary-400);
+}
+.bg-primary-300 {
+    background-color: var(--clr-primary-300);
+}
+.bg-primary-200 {
+    background-color: var(--clr-primary-200);
+}
+.bg-secondary-400 {
+    background-color: var(--clr-secondary-400);
+}
+
+.text-accent-400 {
+    color: var(--clr-accent-400);
+}
+.text-primary-800 {
+    color: var(--clr-primary-800);
+}
+.text-primary-700 {
+    color: var(--clr-primary-700);
+}
+.text-primary-400 {
+    color: var(--clr-primary-400);
+}
+.text-primary-300 {
+    color: var(--clr-primary-300);
+}
+.text-primary-200 {
+    color: var(--clr-primary-200);
+}
+.text-secondary-400 {
+    color: var(--clr-secondary-400);
+}
+.text-upper {
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+}
+.grid-row {
+    grid-template-rows: auto;
+}
+.gap-2 {
+    gap: 2rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg,
+picture,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    color: var(--clr-neutral-100);
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-base);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    line-height: 1.5;
+    background-color: var(--clr-primary-700);
+    /* overflow-x: hidden; */
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+#skills-experience .eyebrow {
+    letter-spacing: 0.25rem;
+    font-size: var(--fs-300);
+    color: var(--clr-secondary-400);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#skills-experience .heading {
+    text-transform: uppercase;
+    font-size: var(--fs-700);
+    margin: 0;
+}
+
+#skills-experience {
+    --skills-width: clamp(10rem,5vw,15rem);
+    display: grid;
+    grid-template-columns: var(--skills-width) 1fr;
+
+    /* Leaves no empty space */
+    grid-auto-flow: dense;
+
+    align-items: center;
+    /* Height */
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    --main-grid-gap: clamp(2rem, 5vw,7rem);
+    gap: var(--main-grid-gap);
+}
+.exp {
+    padding-block: 1.25rem;
+    grid-column: 2;
+    width: calc(100vw - (var(--skills-width) + var(--main-grid-gap)) - clamp(1rem,5vw,3rem));
+}
+.skills {
+    grid-column: 1;
+
+    align-self: stretch;
+
+    display: flex;
+    justify-content: end;
+}
+
+.skills-list {
+    padding: 0;
+    height: 100%;
+
+    list-style: none;
+    display: grid;
+    align-content: center;
+    gap: 3rem;
+    margin: 0;
+    position: relative;
+    /* margin-left: clamp(3rem, 10vw, 7rem); */
+}
+.skills-list::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--clr-primary-200);
+    position: absolute;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 3rem;
+}
+.skills-list li::before {
+    --_size: 0.5rem;
+    content: "";
+    display: inline-block;
+
+    position: absolute;
+    top: 0;
+    /* left: -3rem; */
+
+    width: var(--_size);
+    aspect-ratio: 1;
+
+    background-color: var(--clr-neutral-100);
+
+    border-radius: 50%;
+    outline: 0.33rem solid var(--clr-primary-400);
+
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.introduction {
+    font-size: var(--fs-500);
+    max-width: 55ch;
+    margin-bottom: 2rem;
+}
+.job-experiences {
+    display: grid;
+    grid-auto-flow: column;
+
+    /* Is justify space between from default */
+    justify-content: start;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-color: var(--clr-accent-400) var(--clr-primary-800);
+    scrollbar-width: 0.75rem;
+    padding-block: 2rem;
+    position: relative;
+}
+
+.job-experiences::-webkit-scrollbar {
+    height: 0.75rem;
+}
+.job-experiences::-webkit-scrollbar-track {
+    background-color: var(--clr-primary-800);
+}
+.job-experiences::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent-400);
+    border-radius: 2rem;
+}
+
+.job:last-child {
+    margin-right: 1rem;
+}
+
+.job {
+    background-color: var(--clr-primary-800);
+    border-radius: 0.825rem;
+    padding: 2rem 2rem;
+
+    width: 30rem;
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    position: relative;
+}
+
+.job * {
+    margin: 0;
+}
+
+.duration {
+    color: var(--clr-accent-400);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-300);
+    letter-spacing: 0.2rem;
+}
+.job-info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.job-experiences .job:first-child:before {
+    content: "CURRENT ROLE";
+    color: var(--clr-accent-400);
+    font-weight: var(--fw-bold);
+    position: absolute;
+    /* left: 2rem; */
+    font-size: var(--fs-200);
+    top: -2rem;
+}
+
+@media screen and (width<500px) {
+    img{
+        max-width: 60%;
+    }
+}
