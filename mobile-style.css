@@ -30,6 +30,19 @@
     /* justify-content: start; */
 }
 
+
+.job-experiences{
+    padding-bottom: 0.25rem;
+}
+.job{
+    padding: 1rem;
+    width: calc(100vw - 3.5rem);
+}
+.job-info{
+    flex-direction: column;
+    gap: 0;
+}
+
 .skills-list{
     --_line-position:5rem;
     flex-basis: 100%;
@@ -59,14 +72,3 @@
     min-width: 10vw;
 }
 
-.job-experiences{
-    padding-bottom: 0.25rem;
-}
-.job{
-    padding: 1rem;
-    width: calc(100vw - 3.5rem);
-}
-.job-info{
-    flex-direction: column;
-    gap: 0;
-}
