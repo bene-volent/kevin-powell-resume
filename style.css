@@ -175,8 +175,9 @@ body {
     position: relative;
 }
 
-.job-experiences .job:first-child:before {
+.job-experiences .job:first-of-type::before {
     content: "CURRENT ROLE";
+    /* outline: 1px solid greenyellow; */
     color: var(--clr-accent-400);
     font-weight: var(--fw-bold);
     position: absolute;
